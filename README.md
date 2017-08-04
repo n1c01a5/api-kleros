@@ -1,5 +1,7 @@
 # Webpack library starter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/n1c01a5/api-kleros.svg)](https://greenkeeper.io/)
+
 Webpack based boilerplate for producing libraries (Input: ES6, Output: universal library)
 
 ## Features
