@@ -1,13 +1,14 @@
 import * as _ from 'lodash';
 // import * as BigNumber from 'bignumber.js';
-import Web3Wrapper from '../util/Web3Wrapper';
 import contract from 'truffle-contract';
 
 /**
  * Contract wrapper
  */
 class ContractWrapper {
-  const _web3Wrapper = new Web3Wrapper;
+  constructor(web3Instance) {
+    _web3Wrapper = web3Instance;
+  }
 
   /**
    * Instantiate contract. Private function?

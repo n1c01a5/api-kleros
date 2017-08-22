@@ -8,7 +8,7 @@ import ContractWrapper from './contract_wrapper';
  * This class includes all the functionality related to interacting with ERC20 token contracts.
  * All ERC20 method calls are supported.
  */
-class TokenWrapper extends ContractWrapper {
+class TokenERC223Wrapper extends ContractWrapper {
   /**
    * Retrieves an owner's ERC20 token balance.
    * @param   tokenAddress    The hex encoded contract Ethereum address where the ERC20 token is deployed.
@@ -30,7 +30,7 @@ class TokenWrapper extends ContractWrapper {
    * @param   tokenAddress    The hex encoded contract Ethereum address where the ERC20 token is deployed.
    * @return  tokenContract
    */
-  _getTokenContractAsync = async (tokenAddress) => {
+  _getTokenContractAsync = async tokenAddress => {
     let tokenContract = this._tokenContractsByAddress[tokenAddress];
 
     if (!_.isUndefined(tokenContract)) {
@@ -46,4 +46,4 @@ class TokenWrapper extends ContractWrapper {
   }
 }
 
-export default TokenWrapper;
+export default TokenERC223Wrapper;
