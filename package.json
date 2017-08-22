@@ -1,0 +1,51 @@
+{
+  "name": "api-kleros",
+  "version": "0.3.0",
+  "description": "Kleros API",
+  "main": "lib/api-kleros.js",
+  "scripts": {
+    "build": "webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "6.24.1",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "7.0.0",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest-cli": "^20.0.4",
+    "regenerator-runtime": "^0.11.0",
+    "webpack": "3.1.0",
+    "yargs": "7.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krasimir/webpack-library-starter.git"
+  },
+  "keywords": [
+    "kleros",
+    "decentralized court"
+  ],
+  "author": "Krasimir Tsonev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krasimir/webpack-library-starter/issues"
+  },
+  "homepage": "https://github.com/krasimir/webpack-library-starter",
+  "dependencies": {
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^20.0.4",
+    "lodash": "^4.17.4",
+    "truffle-contract": "^2.0.5",
+    "web3": "^0.20.0"
+  }
+}
