@@ -16,13 +16,13 @@ class TokenWrapper extends ContractWrapper {
    * @return  The owner's ERC20 token balance in base units.
    */
   getBalance = async (tokenAddress, ownerAddress) => {
-    const tokenContract = await this._getTokenContractAsync(tokenAddress);
-    let balance = await tokenContract.balanceOf.call(ownerAddress);
+    const tokenContract = await this._getTokenContractAsync(tokenAddress)
+    let balance = await tokenContract.balanceOf.call(ownerAddress)
 
     // Wrap BigNumbers returned from web3 with our own (later) version of BigNumber
-    balance = new BigNumber(balance);
+    balance = new BigNumber(balance)
 
-    return balance;
+    return balance
   }
 
   /**
@@ -31,10 +31,10 @@ class TokenWrapper extends ContractWrapper {
    * @return  tokenContract
    */
   _getTokenContractAsync = async (tokenAddress) => {
-    let tokenContract = this._tokenContractsByAddress[tokenAddress];
+    let tokenContract = this._tokenContractsByAddress[tokenAddress]
 
     if (!_.isUndefined(tokenContract)) {
-      return tokenContract;
+      return tokenContract
     }
 
     const contractInstance = await this._instantiateContractIfExistsAsync(TokenArtifact, tokenAddress);

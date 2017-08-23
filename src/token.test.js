@@ -1,5 +1,5 @@
 /* global describe, it, before */
-import web3Instance from '../util/web3Instance'
+import {web3Instance} from '../util/web3Instance'
 import TokenERC223Wrapper from '../contract_wrapper/TokenERC223Wrapper'
 import TokenWeb3 from './token'
 import Erc223Contract from '../contracts/ERC223_Token.sol'

@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
-import * as BigNumber from 'bignumber.js';
+import * as BigNumber from 'bignumber.js'
 // import {Web3Wrapper} from '../util/web3';
-import * as TokenArtifact from '../artifact/Token.json';
-import ContractWrapper from './contract_wrapper';
+import * as TokenArtifact from '../artifact/Token.json'
+import ContractWrapper from './contract_wrapper'
 
 /**
  * This class includes all the functionality related to interacting with ERC20 token contracts.
@@ -16,13 +16,13 @@ class TokenERC223Wrapper extends ContractWrapper {
    * @return  The owner's ERC20 token balance in base units.
    */
   getBalance = async (tokenAddress, ownerAddress) => {
-    const tokenContract = await this._getTokenContractAsync(tokenAddress);
-    let balance = await tokenContract.balanceOf.call(ownerAddress);
+    const tokenContract = await this._getTokenContractAsync(tokenAddress)
+    let balance = await tokenContract.balanceOf.call(ownerAddress)
 
     // Wrap BigNumbers returned from web3 with our own (later) version of BigNumber
-    balance = new BigNumber(balance);
+    balance = new BigNumber(balance)
 
-    return balance;
+    return balance
   }
 
   /**
@@ -31,19 +31,19 @@ class TokenERC223Wrapper extends ContractWrapper {
    * @return  tokenContract
    */
   _getTokenContractAsync = async tokenAddress => {
-    let tokenContract = this._tokenContractsByAddress[tokenAddress];
+    let tokenContract = this._tokenContractsByAddress[tokenAddress]
 
     if (!_.isUndefined(tokenContract)) {
-      return tokenContract;
+      return tokenContract
     }
 
-    const contractInstance = await this._instantiateContractIfExistsAsync(TokenArtifact, tokenAddress);
+    const contractInstance = await this._instantiateContractIfExistsAsync(TokenArtifact, tokenAddress)
 
-    tokenContract = contractInstance;
-    this._tokenContractsByAddress[tokenAddress] = tokenContract;
+    tokenContract = contractInstance
+    this._tokenContractsByAddress[tokenAddress] = tokenContract
 
-    return tokenContract;
+    return tokenContract
   }
 }
 
-export default TokenERC223Wrapper;
+export default TokenERC223Wrapper
