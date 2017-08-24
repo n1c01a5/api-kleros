@@ -8,7 +8,7 @@ import {provider} from '../util/web3Instance'
  */
 class ContractWrapper {
   constructor(web3Instance) {
-    _web3Wrapper = web3Instance
+    this._web3Wrapper = web3Instance
   }
 
   /**
@@ -61,7 +61,8 @@ class ContractWrapper {
 
   /**
    * Deploy contract. Private function?
-   * @param   contract
+   * @param   abi
+   * @param   binary of the solidity contract
    * @return  address | err The owner's of the contract
    */
   _deployContractAsync = async (abi, unlinked_binary) => {
@@ -71,14 +72,15 @@ class ContractWrapper {
       unlinked_binary,
     })
 
-    // const  provider = web3Instance.currentProvider
+    const provider = await this._web3Wrapper.currentProvider
 
     MyContract.setProvider(provider)
 
     try {
-      const contractDeployed = MyContract.deployed()
+      const contractDeployed = await MyContract.new({from: "0x55350bbaffbc417f48c6a238d03afff708b9bc5a", gas: 4500000})
       return contractDeployed.address
     } catch (e) {
+      console.log('error deploy')
       return e
     }
   }

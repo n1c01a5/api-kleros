@@ -1,6 +1,6 @@
 // import contract from 'truffle-contract';
 // import * as TokenArtifact from '../artifact/Token.json';
-import Web3Wrapper from '../util/Web3Wrapper';
+import Web3Wrapper from '../util/Web3Wrapper'
 // import TokenContractWrapper from '../contract_wrapper/token_wrapper';
 
 class TokenWeb3 {
@@ -17,10 +17,10 @@ class TokenWeb3 {
    * @return  An instance of the Kleros.js class.
    */
   constructor(provider) {
-    this._web3Wrapper = new Web3Wrapper(provider);
+    this._web3Wrapper = new Web3Wrapper(provider)
   }
 
   getWeb3Wrapper = () => this._web3Wrapper
 }
 
-export default TokenWeb3;
+export default TokenWeb3

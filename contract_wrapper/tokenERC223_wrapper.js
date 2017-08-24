@@ -9,6 +9,9 @@ import ContractWrapper from './contract_wrapper'
  * All ERC20 method calls are supported.
  */
 class TokenERC223Wrapper extends ContractWrapper {
+  constructor(web3Instance) {
+    super(web3Instance)
+  }
   /**
    * Retrieves an owner's ERC20 token balance.
    * @param   tokenAddress    The hex encoded contract Ethereum address where the ERC20 token is deployed.
